@@ -37,7 +37,7 @@ app.put("/repositories/:id", (request, response) => {
 
   const repositoryIndex = repositories.findIndex(repository => repository.id === id)
 
-  if(repositoryIndex < 0) {
+  if(repositoryIndex <= 0) {
     return response.status(400).json({error: 'Repository not found'})
   }
 
@@ -57,7 +57,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   const repositoryIndex = repositories.findIndex(repository => repository.id === id)
 
-  if(repositoryIndex < 0) {
+  if(repositoryIndex <= 0) {
     return response.status(400).json({error: 'Repository not found'})
   }
   
